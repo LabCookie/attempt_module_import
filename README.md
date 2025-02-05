@@ -1,7 +1,7 @@
 ## attempt_module_import
 Simple module import system that handles errors by asking to install the missing modules via pip
 
-In order to import simply have attempt_module_import as a sibling file with the main one and use: 
+In order to import simply have attempt_module_import.py as a sibling file with the main one and use: 
 ```py
 import attempt_module_import
 ```
