@@ -1,5 +1,11 @@
 # This is a custom module that tries to import a module but if failed, the user has to choose to either install with pip or
 # exit the program alltogether. It will request you to restart the program after the installation of such module.
+
+__all__ = [
+    "attempt_import",
+    "attempt_from_import"
+]
+
 import importlib
 from os import name,system
 from subprocess import check_call
@@ -35,12 +41,6 @@ def attempt_from_import(module,attr):
 def attempt_import(module):
     try:
         # Attempt to import the module while handling the importerror
-        importlib.import_module(module)
+        return importlib.import_module(module)
     except ImportError as e:
         handle_importerror(module,e)
-
-# This controls which functions get to be imported when using "from module import *"
-__all__ = [
-    "attempt_import",
-    "attempt_from_import"
-]
